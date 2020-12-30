@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tìm kiếm</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/vendor/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="/vendor/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="/resource/css/general.css">
+    <link rel="stylesheet" href="/resource/css/search.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="nav">
+            <div class="nav__content">
+                <a href="/resource/html/index.html"><img src="/img/logo.png" alt="logo" class="video_logo"></a>
+                <div class="nav__content--icon">
+                    <i class="fa fa-search icon icon__search">
+                    <div action="" class="search">
+                            <input type="text" placeholder="Tìm kiếm..." id="box_search">
+                            <button type="submit" id="btn_search" onclick=""><i class="fa fa-search btn--search"></i></button>
+                </div>
+                </i>
+
+                <a href="/resource/html/account.html" class="icon"><i class="fa fa-user"></i></a>
+                <a href="/resource/html/cart.html" class="icon cart-head" id="boxNotification">
+                    <img src="/img/cart-icon.png" alt="">
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <div class="nav__content--bar">
+                <ul class="menu" id="menu-header">
+
+                    <li>
+                        <a href="/resource/html/genreProduct.html" onclick="getGenre('shop','null')">shop</a>
+                        <ul class="menu__sub">
+                            <li>
+                                <a href="/resource/html/genreProduct.html" onclick="getGenre('top','null')">tops</a>
+                                <ul class="menu__sub--s menu__sub--s1">
+                                    <li><a href="/resource/html/genreProduct.html" onclick="getGenre('top','t_shirt')">t-shirt</a></li>
+                                    <li><a href="/resource/html/genreProduct.html" onclick="getGenre('top','hoodie')">hoodies</a></li>
+                                    <li><a href="/resource/html/genreProduct.html" onclick="getGenre('top','jacket')">jackets</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/resource/html/genreProduct.html" onclick="getGenre('bottom','null')">bottom</a>
+                                <ul class="menu__sub--s menu__sub--s2">
+                                    <li><a href="/resource/html/genreProduct.html" onclick="getGenre('bottom','pant')">pants</a></li>
+                                    <li><a href="/resource/html/genreProduct.html" onclick="getGenre('bottom','short')">shorts</a></li>
+                                    <li><a href="/resource/html/genreProduct.html" onclick="getGenre('bottom','jean')">jeans</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/resource/html/genreProduct.html" onclick="getGenre('bag','null')">bags</a>
+                                <ul class="menu__sub--s menu__sub--s3">
+                                    <li><a href="/resource/html/genreProduct.html" onclick="getGenre('bag','backpack')">backpacks</a></li>
+                                    <li><a href="/resource/html/genreProduct.html" onclick="getGenre('bag','bowler_bag')">bowler bags</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">collections</a></li>
+                    <li><a href="#">blogs</a></li>
+                    <li><a href="#">contact</a></li>
+                    <li><a href="#">sale!</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+        </div>
+        <!-- <div id="btn-addRemoveProduct">
+            <div class="Re_Add btn-add">
+                XXX
+                <ul>
+                    <li><a href="/resource/html/addProduct_Admin.html">ADD PRODUCT</a></li>
+                    <li><a href="/resource/html/admin.html">REMOVE PRODUCT</a></li>
+                    <li>ADD DISCOUNT</li>
+                </ul>
+            </div>
+        </div> -->
+    </header>
+    <section class="section">
+        <div id="result"></div>
+        <div id="products">
+            <!-- <div class="product">
+                <a href="/resource/html/detail_product.html">
+                    <div class="tagProduct">
+                        <img src="/img/tops/dirtycoins-grafitin-1-w.jpg" alt="">
+                        <p id="name_product">Dirtycoins Graffitee (Pink)</p>
+                        <p id="cost_product">350.000₫</p>
+                    </div>
+
+                </a>
+            </div>
+            <div class="product">
+                <a href="/resource/html/detail_product.html">
+                    <div class="tagProduct">
+                        <img src="/img/tops/dirtycoins-grafitin-1-w.jpg" alt="">
+                        <p id="name_product">Dirtycoins Graffitee (Pink)</p>
+                        <p id="cost_product">350.000₫</p>
+                    </div>
+                </a>
+            </div>
+            <div class="product">
+                <a href="/resource/html/detail_product.html">
+                    <div class="tagProduct">
+
+                        <img src="/img/tops/dirtycoins-grafitin-1-w.jpg" alt="">
+                        <p id="name_product">Dirtycoins Graffitee (Pink)</p>
+                        <p id="cost_product">350.000₫</p>
+                    </div>
+                </a>
+            </div>
+            <div class="product">
+                <a href="/resource/html/detail_product.html">
+                    <div class="tagProduct">
+
+                        <img src="/img/tops/dirtycoins-grafitin-1-w.jpg" alt="">
+                        <p id="name_product">Dirtycoins Graffitee (Pink)</p>
+                        <p id="cost_product">350.000₫</p>
+                    </div>
+                </a>
+            </div> -->
+
+        </div>
+        <div class="content_paging">
+            <ul>
+                <li class="btn-prev btn-active fas fa-angle-left"></li>
+                <div class="number-page" id="number-page">
+                    <!-- <li class="active"><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li> -->
+                </div>
+                <li class="btn-next fas fa-angle-right"></li>
+
+            </ul>
+        </div>
+    </section>
+
+
+
+
+    <footer class="footer">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog" id="modal-discount">
+                <div class="modal-content" id="modal-content-discount">
+                    <input id="nameDisccount" type="text" placeholder="Tên mã giảm giá">
+                    <input id="CostDisscont" type="text" placeholder="Số tiền giảm giá">
+                    <input id="amountDisscount" type="text" placeholder="Số lượng mã">
+                    <input id="codeDisscount" type="text" placeholder="Nhập mã code...(Tối da 10 ký tự)">
+                    <div id="btnModalDiscount">
+                        <button type="button" data-dismiss="modal">Close</button>
+                        <button type="button" id="yesSetDisscont" onclick="setDiscount()">yes</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row footer__row">
+            <div class="col-sm-4">
+                <div class="col2">
+                    <h2 class="footer__col--title">Hệ thống cửa hàng</h2>
+                    <ul class="menu--address">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> Chi nhánh Hà Nội
+                        </li>
+                        <p>
+                            121 Phố Huế, Hai Bà Trưng, Hà Nội <br> Tầng 7 Vincom Bà Triệu, Hai Bà Trưng, Hà Nội <br> 28 Khúc Thừa Dụ, Dịch Vọng, Cầu Giấy
+                        </p>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> Chi nhánh Hồ Chí Minh
+                        </li>
+                        <p>
+                            41 Quang Trung, Phường 10, Quận Gò Vấp, TP.Hồ Chí Minh <br> 7 Huỳnh Khương Ninh, Phường Đakao, Quận 1, TP. Hồ Chí Minh <br> 132 Nguyễn Sơn, Phường Phú Thọ Hòa, Quận Tân Phú, TP.Hồ Chí Minh <br> 136 Nguyễn Hồng Đào, Phường 14
+                            , Tân Bình , TP. Hồ Chí Minh
+                        </p>
+                        <li><i class="fas fa-map-marker-alt"></i> Chi nhánh Cần Thơ
+                        </li>
+                        <p>52 Mậu Thân Ninh Kiều - Cần Thơ</p>
+                        <li><i class="fas fa-map-marker-alt"></i> Chi nhánh An Giang</li>
+                        <p><i class="fas fa-phone"></i> 0377738029 <br><i class="fa fa-envelope"></i> minhkhuy7601@gmail.com</p>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="col1">
+                    <div class="footer_box--logo">
+                        <img src="/img/logoWhite1.png" alt="logo" class="footer--logo">
+                        <div class="footer__content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, quidem?</div>
+                        <div style=" margin: 1rem;  font-size: 1.8rem; padding: 0 2rem;">
+                            <input id="feedback" type="text" style="width: 35rem; height: 5rem; padding: 0 2rem;" placeholder="Đóng góp ý kiến...">
+                            <button style=" height: 5rem; padding: 0 1rem;  font-weight: 600;">Send</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="col3">
+                    <h2 class="footer__col--title">Mạng xã hội</h2>
+                    <img src="/img/fb_icon.png" alt="fb">
+                    <a href="https://www.instagram.com/dirtycoins.vn/?hl=vi"><img src="/img/insta_icon.png" alt=""></a>
+                    <img src="/img/pin.png" alt="">
+                    <a href="https://www.youtube.com/channel/UCxLwKCNi6FoZ0lKu6k3qFGA"><img src="/img/yt.png" alt=""></a><br><br><br>
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDirtyCoins.VN&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="214" style="border:none;overflow:hidden"
+                        scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="author">Web1 @ 2020 by NTK</div>
+
+    </footer>
+
+    <script src="/resource/js/data.js"></script>
+    <script src="/resource/js/search.js"></script>
+</body>
+
+</html>

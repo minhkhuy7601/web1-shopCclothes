@@ -1,0 +1,384 @@
+/* div {
+    color: #112d4e;
+    rgb(17, 45, 78) 
+    color: #3f72af;
+    rgb(63, 114, 175) 
+    color: #dbe2ef;
+    rgb(219, 226, 239) 
+    color: #f9f7f7;
+    rgb(249, 247, 247)
+} */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #ffffff;
+    color: #112d4e;
+    text-rendering: optimizeLegibility;
+}
+
+.nav {
+    height: 10vh;
+}
+
+.nav__content {
+    height: 10rem;
+    width: 100%;
+    background-color: rgb(219, 226, 239);
+    position: fixed;
+    z-index: 1;
+    box-shadow: 0 0.5rem 2rem rgb(17, 45, 78);
+}
+
+.video_logo {
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    left: 5rem;
+    top: -2.5rem;
+}
+
+.nav__content--icon {
+    position: absolute;
+    display: inline-block;
+    top: 3rem;
+    right: 2rem;
+}
+
+.icon__search {
+    position: relative;
+    transition: all .5s;
+}
+
+.search {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 2.7rem;
+    right: 0rem;
+    transition: all .3s;
+}
+
+.icon__search:hover .search {
+    visibility: visible;
+    opacity: 1;
+}
+
+.search input {
+    height: 6rem;
+    width: 30rem;
+    padding-left: 2rem;
+    font-size: 1.6rem;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 1rem rgba(17, 45, 78, .7);
+    background-color: rgba(249, 247, 247, .9);
+}
+
+.search input::after {
+    content: "asdasd";
+    width: 25rem;
+    height: 6rem;
+    background-color: rgba(63, 114, 175, 1);
+}
+
+.search button {
+    position: relative;
+    top: -4.2rem;
+    left: 25rem;
+    border: none;
+}
+
+.btn--search {
+    font-size: 2rem;
+    color: rgb(17, 45, 78);
+    background-color: rgb(249, 247, 247);
+}
+
+.icon {
+    font-size: 2.5rem;
+    color: rgb(17, 45, 78);
+    margin: 0.5rem;
+    text-decoration: none;
+}
+
+.cart-head img {
+    width: 2.7rem;
+    height: 2.7rem;
+    position: relative;
+    top: -0.3rem;
+}
+
+.cart-count {
+    position: absolute;
+    color: rgb(249, 247, 247);
+    left: 9rem;
+    top: 2.2rem;
+    font-size: 1.3rem;
+    transform: translate(-50%, -50%);
+}
+
+.nav__content--bar {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    position: relative;
+    top: 3.1rem;
+}
+
+.menu li {
+    display: inline-table;
+    margin: 0 2rem;
+    padding: 0;
+    position: relative;
+}
+
+.menu li a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(17, 45, 78);
+    padding: 0;
+    border-bottom: none;
+    transition: border-bottom 0.2s;
+}
+
+.menu li a:hover {
+    border-bottom: 1px solid rgb(17, 45, 78);
+}
+
+.menu li .menu__sub {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    transform: translateY(2rem);
+    left: -1.8rem;
+    top: 3.1rem;
+    transition: all 0.3s;
+}
+
+.menu li:hover .menu__sub {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu__sub li {
+    width: 25rem;
+    height: 5rem;
+    background-color: rgba(17, 45, 78, .8);
+    transition: all .2s;
+}
+
+.menu__sub li:not(:last-child) {
+    border-bottom: 1px solid rgb(249, 247, 247);
+}
+
+.menu__sub li a {
+    color: rgb(249, 247, 247);
+    display: block;
+    line-height: 5rem;
+    padding-left: 2rem;
+}
+
+.menu__sub li:hover {
+    background-color: rgb(17, 45, 78);
+}
+
+.menu__sub--s {
+    position: absolute;
+    top: 0;
+    left: 23.2rem;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: all .3s;
+}
+
+.menu__sub li:hover .menu__sub--s1,
+.menu__sub li:hover .menu__sub--s2,
+.menu__sub li:hover .menu__sub--s3 {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer {
+    height: max-content;
+    background-color: rgba(63, 114, 175, 1);
+    color: rgb(249, 247, 247);
+}
+
+.footer__row {
+    margin-bottom: 2rem;
+}
+
+.footer--logo {
+    width: 30rem;
+    height: 30rem;
+    margin: 0 auto;
+    display: block;
+}
+
+.col1,
+.col2,
+.col3 {
+    display: inline-block;
+}
+
+.footer__content {
+    font-size: 2rem;
+    margin-left: 3rem;
+}
+
+.col2 {
+    padding-left: 2rem;
+}
+
+.footer__col2--title {
+    font-size: 2rem;
+}
+
+.menu--address {
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.menu--address li {
+    font-weight: 500;
+}
+
+.menu--address p:not(:last-child) {
+    margin-left: 2rem;
+}
+
+.col2,
+.col3 {
+    width: max-content;
+    margin: 0 auto;
+    display: block;
+    margin-top: 5rem;
+}
+
+.col3 {
+    text-align: center;
+}
+
+.col3 img {
+    width: 8rem;
+    height: 8rem;
+    margin: 1rem 0rem;
+}
+
+.author {
+    text-align: center;
+    font-size: 1.5rem;
+    border-top: 1px solid rgba(249, 247, 247, 0.3);
+    height: 7vh;
+    line-height: 7vh;
+}
+
+.Re_Add {
+    position: fixed;
+    padding: 0 1rem;
+    border-radius: 1rem;
+    width: max-content;
+    height: 5rem;
+    text-align: center;
+    line-height: 5rem;
+    font-size: 1.7rem;
+    border: 1px solid red;
+    text-transform: uppercase;
+    color: rgb(249, 247, 247);
+    /* box-shadow: 0 0 1rem rgba(63, 114, 175, 1); */
+    z-index: 1;
+    top: 2.5rem;
+    left: 25rem;
+}
+
+
+/* .btn-add {
+    top: 2.5rem;
+    left: 25rem;
+    z-index: 10;
+} */
+
+.btn-remove {
+    top: 2.5rem;
+    right: 20rem;
+    z-index: 10;
+}
+
+#noticeNumber {
+    position: absolute;
+    right: -0.5rem;
+    background-color: red;
+    font-size: 1.2rem;
+    padding: 0.1rem 0.7rem;
+    border-radius: 50%;
+}
+
+@keyframes demo {
+    0% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+
+/* #imgNotice {
+    /* animation-name: demo;
+    animation-duration: 0.15s;
+    animation-iteration-count: infinite; */
+
+#modal-discount {
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+#modal-content-discount input {
+    height: 4rem;
+    margin: 1rem 2rem;
+    padding: 0 2rem;
+}
+
+#btnModalDiscount {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+}
+
+#btnModalDiscount button {
+    width: 7rem;
+    height: 4rem;
+    background-color: rgb(17, 45, 78);
+    color: white;
+}
+
+#btn--setDisscount {
+    position: absolute;
+    background-color: rgba(17, 45, 78, 1);
+    border-radius: 1rem;
+    font-size: 2rem;
+    color: white;
+    padding: 1rem 2rem;
+    left: 2rem;
+    top: 8rem;
+    text-transform: uppercase;
+    font-style: italic;
+}
